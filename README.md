@@ -5,7 +5,11 @@ This is a fork from [kzahel's quicktime-parse](https://github.com/kzahel/quickti
 The goals were:
 
 * store the metadata inside a dictionary after parsing instead of just printing the results
-* speed up parsing by not reading the actual video data
+* speed up parsing by only reading relevant data (the original script used read() instead of seek() _a lot_)
+
+Additional features:
+
+* dynamically parse quicktime meta-tables in mdta format
 
 ### How to use
 
