@@ -4,8 +4,8 @@ This is a fork from [kzahel's quicktime-parse](https://github.com/kzahel/quickti
 
 The goals were:
 
-* actually store the metadata inside a dictionary after parsing instead of just printing the results
-* speed up parsing, by not reading data that belongs to the actual video-data
+* store the metadata inside a dictionary after parsing instead of just printing the results
+* speed up parsing by not reading the actual video data
 
 ### How to use
 
