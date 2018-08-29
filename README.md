@@ -11,6 +11,12 @@ Additional features:
 
 * dynamically parse quicktime meta-tables in mdta format
 
+### Installation
+
+You can install this tool as a package via PIP:
+
+`pip install git+"https://github.com/Deconimus/quicktime-parse.git"`
+
 ### How to use
 
 Here's a brief code example that showcases how to use the script:
@@ -30,9 +36,3 @@ for key in qt.metadata.keys():
 ```
 
 Note that all metadata key's are converted to lower-case and stripped of leading and trailing spaces.
-
-### Installation
-
-You can install this tool as a package via PIP:
-
-`pip install git+"https://github.com/Deconimus/quicktime-parse.git"`
