@@ -11,14 +11,20 @@ Additional features:
 
 * dynamically parse quicktime meta-tables in mdta format
 
+### Installation
+
+You can install this tool as a package via PIP:
+
+`pip install git+"https://github.com/Deconimus/quicktime-parse.git"`
+
 ### How to use
 
 Here's a brief code example that showcases how to use the script:
 
 ```python
-import quicktimeparse
+import quicktimeparse.parse as qtparse
 
-qt = quicktimeparse.Mov("path/to/file.mov")
+qt = qtparse.Mov("path/to/file.mov")
 qt.parse()
 
 #retrieve the creation-time as a string (the actual creation time, not the file-system creation time)
