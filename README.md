@@ -16,9 +16,9 @@ Additional features:
 Here's a brief code example that showcases how to use the script:
 
 ```python
-import quicktimeparse
+import quicktimeparse.parse as qtparse
 
-qt = quicktimeparse.Mov("path/to/file.mov")
+qt = qtparse.Mov("path/to/file.mov")
 qt.parse()
 
 #retrieve the creation-time as a string (the actual creation time, not the file-system creation time)
@@ -30,3 +30,9 @@ for key in qt.metadata.keys():
 ```
 
 Note that all metadata key's are converted to lower-case and stripped of leading and trailing spaces.
+
+### Installation
+
+You can install this tool as a package via PIP:
+
+`pip install git+"https://github.com/Deconimus/quicktime-parse.git"`
