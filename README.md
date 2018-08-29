@@ -7,6 +7,10 @@ The goals were:
 * store the metadata inside a dictionary after parsing instead of just printing the results
 * speed up parsing by not reading the actual video data
 
+Additional features:
+
+* dynamically parse quicktime meta-tables in mdta format
+
 ### How to use
 
 Here's a brief code example that showcases how to use the script:
