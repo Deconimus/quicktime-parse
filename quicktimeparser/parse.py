@@ -223,66 +223,51 @@ class Mov(object):
 			
 	def _parse_meta(self, length, depth):
 		
-		bytesleft = length
+		pos = self._f.tell()
 		
 		self._f_skip(16)
-		bytesleft -= 16
 		
 		header_version = self._f_read(4).decode("latin1")
-		bytesleft -= 4
 		if header_version != "mdta":
 			return
 			
 		self._f_skip(33)
-		bytesleft -= 33
 		
 		keys = []
 		values = []
 		
 		l = self._f_read(1)
 		h = self._f_read(4).decode("latin1")
-		bytesleft -= 5
 		while h == "mdta":
 			data = ""
 			b = self._f_read(1)
-			bytesleft -= 1
 			while b != b'\x00':
 				data += b.decode("latin1")
 				b = self._f_read(1)
-				bytesleft -= 1
 			keys.append(data.lower().strip())
 			while b == b'\x00':
 				b = self._f_read(1)
-				bytesleft -= 1
 			l = b
 			h = self._f_read(4).decode("latin1")
-			bytesleft -= 4
 		
 		i = 0
 		while i < len(keys):
+			h = ""
 			while h != "data":
 				b = self._f_read(1)
-				bytesleft -= 1
 				while b == b'\x00':
 					b = self._f_read(1)
-					bytesleft -= 1
 				b = self._f_read(1)
-				bytesleft -= 1
 				if b != b'\x00':
 					h = b.decode("latin1")
 					h += self._f_read(3).decode("latin1")
-					bytesleft -= 3
 			self._f_skip(8)
-			bytesleft -= 8
 			data = ""
 			b = self._f_read(1)
-			bytesleft -= 1
-			while b != b'\x00' and bytesleft > 0:
+			while b != b'\x00' and self._f.tell() - pos < length:
 				data += b.decode("latin1")
 				b = self._f_read(1)
-				bytesleft -= 1
 			values.append(data.strip())
-			h = ""
 			i += 1
 			
 		table = dict()
@@ -295,7 +280,7 @@ class Mov(object):
 			
 			self.metadata[key] = values[i]
 			
-		self._f_skip(bytesleft)
+		self._f.seek(pos + length, 0)
 			
 	def _read_ftyp(self, length, depth):
 		prefix = "  "*depth + "  | "

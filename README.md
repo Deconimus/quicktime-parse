@@ -1,4 +1,4 @@
-## Quicktime-Parse
+## Quicktime Parser
 
 This is a fork from [kzahel's quicktime-parse](https://github.com/kzahel/quicktime-parse).
 
@@ -15,14 +15,14 @@ Additional features:
 
 You can install this tool as a package via PIP:
 
-`pip install git+"https://github.com/Deconimus/quicktime-parse.git"`
+`pip install git+"https://github.com/Deconimus/quicktime-parser"`
 
 ### How to use
 
 Here's a brief code example that showcases how to use the script:
 
 ```python
-import quicktimeparse.parse as qtparse
+import quicktimeparser.parse as qtparse
 
 qt = qtparse.Mov("path/to/file.mov")
 qt.parse()
