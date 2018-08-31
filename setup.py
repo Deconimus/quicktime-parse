@@ -1,9 +1,9 @@
 from setuptools import setup, find_packages
 
 setup(
-	name = 'quicktimeparse',
+	name = 'quicktimeparser',
 	version = '1.0.0',
-	url = 'https://github.com/Deconimus/quicktime-parse.git',
+	url = 'https://github.com/Deconimus/quicktime-parser.git',
 	author = 'Deconimus',
 	author_email = '',
 	description = 'A parser for quicktime videos.',
