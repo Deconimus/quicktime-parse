@@ -1,15 +1,6 @@
 ## Quicktime Parser
 
-This is a fork from [kzahel's quicktime-parse](https://github.com/kzahel/quicktime-parse).
-
-The goals were:
-
-* store the metadata inside a dictionary after parsing instead of just printing the results
-* speed up parsing by only reading relevant data (the original script used read() instead of seek() _a lot_)
-
-Additional features:
-
-* dynamically parse quicktime meta-tables in mdta format
+Parse metadata from quicktime `.mov` files.
 
 ### Installation
 
@@ -36,3 +27,16 @@ for key in qt.metadata.keys():
 ```
 
 Note that all metadata key's are converted to lower-case and stripped of leading and trailing spaces.
+
+### History
+
+This is a fork from [kzahel's quicktime-parse](https://github.com/kzahel/quicktime-parse).
+
+The goals were:
+
+* store the metadata inside a dictionary after parsing instead of just printing the results
+* speed up parsing by only reading relevant data (the original script used read() instead of seek() _a lot_)
+
+Additional features:
+
+* dynamically parse quicktime meta-tables in mdta format
